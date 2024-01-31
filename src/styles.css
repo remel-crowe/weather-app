@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.main-container {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(23, 23, 33);
+    display: grid;
+    grid-template-columns: 1fr .5fr;
+    padding: 30px 30px;
+    gap: 10px
+}
+
+.main-container .main-display {
+    display: grid;
+    grid-template-rows: .4fr repeat(3, 2fr);
+    gap: 10px
+}
+
+
+
+.main-container .main-display .centralDiv {
+    background-color: rgb(59, 59, 69);
+    border-radius: 10px;
+}
+
+.main-container .main-display .search-container input{
+    width: 90%;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(59, 59, 69);
+    font-family: 'Montserrat';
+    color: white;
+    padding: 0px 10px;
+    font-size: 17px;
+}
+
+.main-container .main-display .search-container button{
+    width: 75px;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    
+}
+
+.main-container .top{
+    background-color: rgb(23, 23, 33) !important
+}
+
+.weatherBox {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+    font-family: 'Montserrat';
+}
+
+.weatherBox img{
+    grid-column: 2;
+    grid-row: 1/3;
+    width: 60%;
+    object-fit: cover;
+}
+
+.city, .temp{
+    color: white;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.main-container .forecast {
+    background-color: rgb(59, 59, 69);
+    margin-top: 85px;
+    border-radius: 10px;
+}
+
+.main-container .middle{
+    display: grid;
+    grid-template-rows: 0.2fr 1fr;
+    padding: 25px 25px;
+    font-family: 'Montserrat';
+    color: white;
+}
+
+.main-container .middle .forecast-text,
+.hourly-info .time {
+    color: rgb(123, 123, 123);
+    font-weight: bold;
+}
+
+
+
+.hourly-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.hourly-info {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 12%;
+    row-gap: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center; /* Center items horizontally */
+    overflow: hidden;
+  }
+  
+.hourly-info img{
+    object-fit: contain;
+    width: 80%;
+}
+
+.hourly-info .time{
+    font-size: smaller;
+
+}
+
+
+
+
+
+
+
+
+
