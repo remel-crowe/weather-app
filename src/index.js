@@ -1,9 +1,9 @@
-import weatherUpdate from "./weatherDisplay";
+import getWeather from "./dataParser";
 import updateDisplay from "./dom";
 
 const searchBtn = document.getElementById("search");
 
 searchBtn.addEventListener("click", async () => {
-  let weather = await weatherUpdate();
+  let weather = await getWeather();
   updateDisplay(weather);
 });

@@ -1,20 +1,19 @@
 const currentWeather = document.querySelector(".top");
 const hourlyWeather = document.querySelector(".hourly-container");
+const airConditions = document.querySelector(".air-conditions-container");
 
 export default function updateDisplay(weatherInfo) {
   updateCurrent(weatherInfo.current);
   updateForecast(weatherInfo.forecast);
+  updateAir(weatherInfo.current);
 }
 
 function tConvert(time) {
-  // Check correct time format and split into components
   time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [
     time,
   ];
-
   if (time.length > 1) {
-    // If time format correct
-    time = time.slice(1); // Remove full string match value
+    time = time.slice(1);
     time[5] = +time[0] < 12 ? "AM" : "PM"; // Set AM/PM
     time[0] = +time[0] % 12 || 12; // Adjust hours
   }
@@ -22,7 +21,7 @@ function tConvert(time) {
 }
 
 function updateCurrent(currentInfo) {
-  const { location, temp, conditions, icon } = currentInfo;
+  const { location, temp, icon } = currentInfo;
   const currentWeatherDiv = document.createElement("div");
   currentWeatherDiv.classList.add("weatherBox");
   currentWeatherDiv.innerHTML = `    
@@ -51,4 +50,37 @@ function updateForecast(forecastInfo) {
   );
 
   hourlyWeather.innerHTML = hourlyDivs.join("");
+}
+
+function updateAir(airInfo) {
+  const { uv, feels } = airInfo;
+  airConditions.innerHTML = `
+  <div>
+    <div>
+    <p>icon</p>
+    <p>Real Feel</p>
+    </div>
+    <p>${uv}</p>
+  </div>
+  <div>
+  <div>
+    <p>icon</p>
+    <p>Real Feel</p>
+    </div>
+    <p>${uv}</p>
+  </div>
+  <div>
+  <div>
+    <p>icon</p>
+    <p>Real Feel</p>
+    </div>
+    <p>${uv}</p>
+  </div>
+  <div>
+  <div>
+    <p>icon</p>
+    <p>Real Feel</p>
+    </div>
+    <p>${uv}</p>
+  </div>`;
 }

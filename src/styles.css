@@ -11,10 +11,17 @@
     width: 100%;
     background-color: rgb(23, 23, 33);
     display: grid;
-    grid-template-columns: 1fr .5fr;
+    grid-template-columns: 0.1fr 1fr .5fr;
     padding: 30px 30px;
     gap: 10px
 }
+
+
+.main-container .sidemenu{
+    background-color: rgb(59, 59, 69);
+    border-radius: 12px;
+}
+
 
 .main-container .main-display {
     display: grid;
@@ -132,7 +139,12 @@
 
 
 
-
+.air-conditions-container {
+    display: grid;
+    grid-template: 1fr 1fr/ 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
 
 
 

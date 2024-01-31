@@ -10,10 +10,17 @@
     
    
     <div id="content" class="main-container">
+        <div class="sidemenu">
+
+
+        </div>
         <div id="current" class="main-display">
             <div class="search-container">
-                <input type="text" id="location" placeholder="location">
-                <button id="search">Search</button>
+                <form>
+                    <input type="text" id="location" placeholder="Search - city/postcode/town">
+                    <button id="search">Search</button> 
+                </form>
+                
             </div>
             
             <div class="top centralDiv ">
@@ -22,7 +29,10 @@
                 <p class="forecast-text">Todays Forecast</p>
                 <div class="hourly-container"></div>
             </div>
-            <div class="centralDiv"></div>
+            <div class="bottom centralDiv">
+                <p>Air Conditions</p>
+                <div class="air-conditions-container"></div>
+            </div>
         </div>
         <div class="forecast">
 

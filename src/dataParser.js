@@ -2,12 +2,12 @@ import fetchData from "./apiCall";
 
 const userLocation = document.getElementById("location");
 
-export default function weatherUpdate() {
+export default function getWeather() {
   let searchValue = userLocation.value;
-  return getWeather(searchValue);
+  return getAPIResponse(searchValue);
 }
 
-async function getWeather(location) {
+async function getAPIResponse(location) {
   if (!location) {
     location = "London";
   }
@@ -19,6 +19,8 @@ async function getWeather(location) {
       temp: data.current.temp_c,
       conditions: data.current.condition.text,
       icon: data.current.condition.icon,
+      feels: data.current.feelslike_c,
+      uv: data.current.uv,
     },
 
     forecast: {
