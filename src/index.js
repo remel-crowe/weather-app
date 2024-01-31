@@ -1,9 +1,20 @@
 import getWeather from "./dataParser";
 import updateDisplay from "./dom";
 
-const searchBtn = document.getElementById("search");
+const form = document.querySelector("form");
 
-searchBtn.addEventListener("click", async () => {
-  let weather = await getWeather();
-  updateDisplay(weather);
-});
+window.onload = () => {
+  getWeather().then((response) => {
+    updateDisplay(response);
+  });
+  form.addEventListener("submit", (e) => {
+    handleSubmit(e);
+  });
+};
+
+function handleSubmit(event) {
+  event.preventDefault();
+  getWeather().then((response) => {
+    updateDisplay(response);
+  });
+}

@@ -20,6 +20,13 @@ function tConvert(time) {
   return time.join(" "); // return adjusted time or original string
 }
 
+function convertIcon(icon) {
+  //Take a standard icon from the API and return a personalised version
+  const newIcons = {
+    sunny: "#",
+  };
+}
+
 function updateCurrent(currentInfo) {
   const { location, temp, icon } = currentInfo;
   const currentWeatherDiv = document.createElement("div");
