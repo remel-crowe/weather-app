@@ -62,35 +62,31 @@ function updateForecast(forecastInfo) {
 }
 
 function updateAir(airInfo) {
-  const { uv, feels } = airInfo;
+  const { uv, feels, wind, humidity } = airInfo;
   airConditions.innerHTML = `
   <div>
     <div>
-    <p>icon</p>
     <p>Real Feel</p>
     </div>
     <p>${feels}</p>
   </div>
   <div>
   <div>
-    <p>icon</p>
     <p>UV</p>
     </div>
     <p>${uv}</p>
   </div>
   <div>
   <div>
-    <p>icon</p>
-    <p>Real Feel</p>
+    <p>Wind</p>
     </div>
-    <p>${uv}</p>
+    <p>${wind}</p>
   </div>
   <div>
   <div>
-    <p>icon</p>
-    <p>Real Feel</p>
+    <p>Humidity</p>
     </div>
-    <p>${uv}</p>
+    <p>${humidity}</p>
   </div>`;
 }
 

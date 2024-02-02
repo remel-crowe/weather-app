@@ -88,7 +88,8 @@
     font-size: 36px;
 }
 
-.main-container .middle{
+.main-container .middle,
+.main-container .bottom{
     display: grid;
     grid-template-rows: 0.2fr 1fr;
     padding: 25px 25px;
@@ -140,10 +141,7 @@
     padding: 10px 30px;
     gap:10px
 }
-.air-conditions-container div{
-   font-weight: bold;
-   color: white;
-}
+
 
 .air-conditions-container div:nth-child(2),
 .air-conditions-container div:nth-child(4){

@@ -21,6 +21,8 @@ async function getAPIResponse(location) {
       icon: data.current.condition.icon,
       feels: data.current.feelslike_c,
       uv: data.current.uv,
+      wind: data.current.wind_mph,
+      humidity: data.current.humidity,
     },
 
     forecast: {
