@@ -1,11 +1,13 @@
 const currentWeather = document.querySelector(".top");
 const hourlyWeather = document.querySelector(".hourly-container");
 const airConditions = document.querySelector(".air-conditions-container");
+const weekForecast = document.querySelector(".forecast");
 
 export default function updateDisplay(weatherInfo) {
   updateCurrent(weatherInfo.current);
   updateForecast(weatherInfo.forecast);
   updateAir(weatherInfo.current);
+  updateWeek(weatherInfo.forecast.days);
 }
 
 function tConvert(time) {
@@ -67,12 +69,12 @@ function updateAir(airInfo) {
     <p>icon</p>
     <p>Real Feel</p>
     </div>
-    <p>${uv}</p>
+    <p>${feels}</p>
   </div>
   <div>
   <div>
     <p>icon</p>
-    <p>Real Feel</p>
+    <p>UV</p>
     </div>
     <p>${uv}</p>
   </div>
@@ -90,4 +92,30 @@ function updateAir(airInfo) {
     </div>
     <p>${uv}</p>
   </div>`;
+}
+
+function updateWeek(weekinfo) {
+  weekForecast.innerHTML = "";
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  weekinfo.map((day) => {
+    let date = new Date(day.date);
+    let tday = days[date.getDay()];
+    let condition = day.day.condition.text;
+
+    let dayDiv = document.createElement("div");
+    dayDiv.classList.add("day-container");
+    dayDiv.innerHTML = `
+    <p>${tday} | ${condition}</p>
+    `;
+    weekForecast.appendChild(dayDiv);
+  });
 }

@@ -24,6 +24,7 @@ async function getAPIResponse(location) {
     },
 
     forecast: {
+      days: data.forecast.forecastday,
       hours: data.forecast.forecastday[2],
     },
   };

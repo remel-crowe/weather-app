@@ -17,7 +17,8 @@
     display: grid;
     grid-template-columns: 0.1fr 1fr .5fr;
     padding: 30px 30px;
-    gap: 10px
+    gap: 10px;
+    font-family: 'Montserrat';
 }
 
 
@@ -46,7 +47,6 @@
     border: none;
     border-radius: 10px;
     background-color: rgb(59, 59, 69);
-    font-family: 'Montserrat';
     color: white;
     padding: 0px 10px;
     font-size: 17px;
@@ -73,7 +73,6 @@
     justify-content: center;
     align-items: center;
     padding-left: 30px;
-    font-family: 'Montserrat';
 }
 
 .weatherBox img{
@@ -89,22 +88,16 @@
     font-size: 36px;
 }
 
-.main-container .forecast {
-    background-color: rgb(59, 59, 69);
-    margin-top: 85px;
-    border-radius: 10px;
-}
-
 .main-container .middle{
     display: grid;
     grid-template-rows: 0.2fr 1fr;
     padding: 25px 25px;
-    font-family: 'Montserrat';
     color: white;
 }
 
 .main-container .middle .forecast-text,
-.hourly-info .time {
+.hourly-info .time,
+.bottom > p{
     color: rgb(123, 123, 123);
     font-weight: bold;
 }
@@ -139,15 +132,44 @@
 
 }
 
-
-
-
-
 .air-conditions-container {
     display: grid;
     grid-template: 1fr 1fr/ 1fr 1fr;
     justify-content: center;
     align-items: center;
+    padding: 10px 30px;
+    gap:10px
+}
+.air-conditions-container div{
+   font-weight: bold;
+   color: white;
+}
+
+.air-conditions-container div:nth-child(2),
+.air-conditions-container div:nth-child(4){
+    text-align: right;
+
+}
+
+.main-container .forecast {
+    background-color: rgb(59, 59, 69);
+    margin-top: 85px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+.forecast div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 15%;
+    color: white;
+    border-radius: 12px;
 }
 
 
